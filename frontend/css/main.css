@@ -1,7 +1,28 @@
+body {
+  font-family: "lexend", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8de;
+  /* ensure page content starts at the top of the viewport (header on top) */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* keep the header at the top of the viewport */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: inherit;
+}
 
 .cars-section {
-  background-color: #f4f3e9;
+  background-color: #f8f8de;
   padding: 60px 40px;
+  /* allow main content to grow so footer stays at the bottom */
+  flex: 1;
 }
 .cars-filters {
   display: flex;
@@ -70,40 +91,6 @@
   background-color: #000;
   color: #fff;
   padding: 40px 24px;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-brand img {
-  height: 32px;
-  margin-bottom: 8px;
-}
-.footer-brand p {
-  font-size: 0.8rem;
-  color: #aaa;
-}
-.footer-nav {
-  display: flex;
-  gap: 30px;
-}
-.footer-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.footer-nav a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+  /* push footer to the bottom when page content is short */
+  margin-top: auto;
 }
